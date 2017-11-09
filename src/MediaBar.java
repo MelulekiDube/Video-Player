@@ -35,11 +35,8 @@ public class MediaBar extends HBox {
     Label volume = new Label("Volume");
     MediaPlayer player;
     Button playButton = new Button("", IR.pause);
-    Button fullscreen = new Button("", IR.fs);
-    Stage currentStage;
-
-    public MediaBar(MediaPlayer play, Stage cs) {
-        this.currentStage = cs;
+//    Button fullscreen = new Button("", IR.fs);
+    public MediaBar(MediaPlayer play) {
         player = play;
         setAlignment(Pos.CENTER);
         setPadding(new Insets(5, 10, 5, 10));
@@ -56,7 +53,7 @@ public class MediaBar extends HBox {
         getChildren().add(time);
         getChildren().add(volume);
         getChildren().add(vol);
-        getChildren().add(fullscreen);
+//        getChildren().add(fullscreen);
 
         playButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -100,19 +97,19 @@ public class MediaBar extends HBox {
                 }
             }
         });
-
-        fullscreen.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                if (!currentStage.isFullScreen()) {
-                    fullscreen.setGraphic(IR.ufs);
-                    currentStage.setFullScreen(true);
-                    currentStage.setScene(new Scene(currentStage.getScene().getRoot(),  currentStage.getWidth(),currentStage.getHeight()));
-                }else{
-                    currentStage.setFullScreen(false);
-                }
-            }
-        });
+//
+//        fullscreen.setOnAction(new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent event) {
+//                if (!currentStage.isFullScreen()) {
+//                    fullscreen.setGraphic(IR.ufs);
+//                    currentStage.setFullScreen(true);
+//                    currentStage.setScene(new Scene(currentStage.getScene().getRoot(),  currentStage.getWidth(),currentStage.getHeight()));
+//                }else{
+//                    currentStage.setFullScreen(false);
+//                }
+//            }
+//        });
     }
 
     protected void updateValues() {

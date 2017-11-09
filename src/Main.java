@@ -45,7 +45,7 @@ public class Main extends Application {
                 File fl = filechooser.showOpenDialog(primaryStage);
                 if (fl != null) {
                     try {
-                        player = new Player(fl.toURI().toURL().toExternalForm(),primaryStage);
+                        player = new Player(fl.toURI().toURL().toExternalForm());
                         Scene scene = new Scene(player, 720, 535, Color.BLACK);
                         primaryStage.setScene(scene);
                     } catch (MalformedURLException ex) {
@@ -56,7 +56,7 @@ public class Main extends Application {
         });
         file.getItems().add(open);
         menu.getMenus().add(file);
-        player = new Player("file:///C:/ts.mp4.MP4",primaryStage);
+        player = new Player("file:///C:/ts.mp4.MP4");
         player.setTop(menu);
         Scene scene = new Scene(player, 720, 535, Color.BLACK);
         File files = new File(player.media.getSource());
