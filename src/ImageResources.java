@@ -2,6 +2,7 @@
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.image.Image;
@@ -24,10 +25,10 @@ public final class ImageResources {
     public ImageResources() {
         //initialising the file input streams
         try {
-            playFile = new FileInputStream(new File("Play.png"));
-            pauseFile=new FileInputStream(new File("Pause.png"));
-            fsFile= new FileInputStream(new File("Fullscreen.png"));
-            ufsFile= new FileInputStream(new File("Compress.png"));
+            playFile = new FileInputStream(new File("./Assets/Play.png"));
+            pauseFile=new FileInputStream(new File("./Assets/Pause.png"));
+            fsFile= new FileInputStream(new File("./Assets/Fullscreen.png"));
+            ufsFile= new FileInputStream(new File("./Assets/Compress.png"));
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MediaBar.class.getName()).log(Level.SEVERE, null, ex);
         }
